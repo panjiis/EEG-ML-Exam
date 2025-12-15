@@ -1,11 +1,11 @@
 pandas
 scikit_learn
-seaborn
-streamlit
 tensorflow
 mne
-numpy
 scipy
-matplotlib
+streamlit
+numpy
+tensorflow-cpu
 joblib
-pandas
+matplotlib
+seaborn
