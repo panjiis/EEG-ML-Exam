@@ -25,20 +25,29 @@ Ia membandingkan **Prediksi Model** vs **Label Asli (Marker T1/T2)**.
 """)
 
 @st.cache_resource
+@st.cache_resource
 def load_assets():
     try:
-        # Tambahkan print path untuk memastikan lokasi file
         import os
-        st.write(f"Current Working Directory: {os.getcwd()}")
-        st.write(f"Files in directory: {os.listdir('.')}")
+        # 1. Dapatkan lokasi absolut file script ini (streamlit_app.py) berada
+        base_dir = os.path.dirname(os.path.abspath(__file__))
 
-        model = tf.keras.models.load_model('best_model.keras')
-        with open('label_mapping.json', 'r') as f:
+        # 2. Sambungkan lokasi folder tersebut dengan nama file model
+        model_path = os.path.join(base_dir, 'best_model.keras')
+        mapping_path = os.path.join(base_dir, 'label_mapping.json')
+        scaler_path = os.path.join(base_dir, 'scaler_raw.pkl')
+
+        # 3. Load menggunakan path lengkap (absolut) tadi
+        model = tf.keras.models.load_model(model_path)
+        
+        with open(mapping_path, 'r') as f:
             mapping = json.load(f)
-        scaler = joblib.load('scaler_raw.pkl')
+            
+        scaler = joblib.load(scaler_path)
+        
         return model, mapping, scaler
+        
     except Exception as e:
-        # INI BAGIAN PENTING: Tampilkan error aslinya di layar
         st.error(f"Terjadi error saat load assets: {e}")
         return None, None, None
 
