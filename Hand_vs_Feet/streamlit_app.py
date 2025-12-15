@@ -25,7 +25,6 @@ Ia membandingkan **Prediksi Model** vs **Label Asli (Marker T1/T2)**.
 """)
 
 @st.cache_resource
-@st.cache_resource
 def load_assets():
     try:
         import os
@@ -132,9 +131,10 @@ if input_source == "Upload File (.edf)":
         file_path = temp_file.name
 
 else:
-    st.sidebar.info("Dataset: EEGBCI (Motor Imagery)")
+    st.sidebar.info("Dataset: EEGBCI (Motor Execution)")
     subject_id = st.sidebar.number_input("Subject ID (1-109)", 1, 109, 1)
-    run_id = st.sidebar.selectbox("Run (Task 4: Hands vs Feet)", [6, 10, 14])
+    
+    run_id = st.sidebar.selectbox("Run (Task 4: Hands vs Feet)", [5, 9, 13])
     
     if st.sidebar.button("Load Data"):
         with st.spinner("Downloading..."):
@@ -213,4 +213,3 @@ elif not file_path:
     st.info("👈 Silakan load data dari sidebar untuk memulai evaluasi.")
 elif not model:
     st.error("Model tidak ditemukan.")
-
