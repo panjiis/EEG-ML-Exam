@@ -27,12 +27,19 @@ Ia membandingkan **Prediksi Model** vs **Label Asli (Marker T1/T2)**.
 @st.cache_resource
 def load_assets():
     try:
+        # Tambahkan print path untuk memastikan lokasi file
+        import os
+        st.write(f"Current Working Directory: {os.getcwd()}")
+        st.write(f"Files in directory: {os.listdir('.')}")
+
         model = tf.keras.models.load_model('best_model.keras')
         with open('label_mapping.json', 'r') as f:
             mapping = json.load(f)
         scaler = joblib.load('scaler_raw.pkl')
         return model, mapping, scaler
     except Exception as e:
+        # INI BAGIAN PENTING: Tampilkan error aslinya di layar
+        st.error(f"Terjadi error saat load assets: {e}")
         return None, None, None
 
 model, mapping_info, scaler_info = load_assets()
