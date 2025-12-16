@@ -32,7 +32,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  **Clone the repo:**
     ```bash
-    git clone [https://github.com/Clah7/EEG-hands-vs-feet.git](https://github.com/panjiis/EEG-ML-Exam)
+    git clone [https://github.com/panjiis/EEG-ML-Exam.git](https://github.com/panjiis/EEG-ML-Exam)
     cd EEG-hands-vs-feet
     ```
 
