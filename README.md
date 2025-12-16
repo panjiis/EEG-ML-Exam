@@ -6,17 +6,8 @@ The primary goal is to build a robust classifier for Brain-Computer Interface (B
 
 ## Table of Contents
 
-- [About The Project](#-about-the-project)
 - [Dataset](#-dataset)
-- [Methodology](#-methodology)
 - [Installation](#-installation)
-- [Usage](#-usage)
-- [Results](#-results)
-
-## About The Project
-
-This project investigates the feasibility of decoding motor execution (ME) tasks from non-invasive EEG signals:
-* **CNN**: To automatically learn spatio-temporal features directly from the raw or preprocessed EEG data.
 
 ## Dataset
 This project uses the **EEG Motor Movement/Imagery Dataset (EEGMMIDB)**, a well-known dataset from PhysioNet, which is standardized for BCI research.
@@ -33,20 +24,7 @@ The data is loaded and accessed using the MNE-Python library, specifically via t
     * **T2: Both feet**
 * **Data Access:** The dataset is downloaded automatically by the MNE library when the function is called. No manual download is required. See the MNE documentation for [mne.datasets.eegbci.load_data](https://mne.tools/stable/generated/mne.datasets.eegbci.load_data.html) for more details.
 
-## Methodology
 
-The project workflow is divided into several key stages:
-
-1.  **Preprocessing:**
-    * **Filtering**
-    * **Epoching** 
-    * **Artifact Removal**
-    * **Normalization** 
-
-2.  **Model Architecture:**
-    * **CNN** 
-
-3.  **Training & Evaluation:**
 
 ## Installation
 
@@ -54,7 +32,7 @@ To get a local copy up and running, follow these simple steps.
 
 1.  **Clone the repo:**
     ```bash
-    git clone [https://github.com/Clah7/EEG-hands-vs-feet.git](https://github.com/Clah7/EEG-hands-vs-feet.git)
+    git clone [https://github.com/Clah7/EEG-hands-vs-feet.git](https://github.com/panjiis/EEG-ML-Exam)
     cd EEG-hands-vs-feet
     ```
 
