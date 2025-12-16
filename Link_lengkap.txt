@@ -1,0 +1,9 @@
+Link Aplikasi:
+https://eeg-ml-examgit-cyjdzc5lfjrjffggs76sp2.streamlit.app
+
+Link Github:
+https://github.com/panjiis/EEG-ML-Exam
+
+Link Dataset:
+https://physionet.org/content/eegmmidb/1.0.0/
+https://mne.tools/stable/generated/mne.datasets.eegbci.load_data.html
